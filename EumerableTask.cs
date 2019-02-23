@@ -82,12 +82,13 @@ namespace PadawansTask15
             if (!data.Any())
                 return new List<long>();
             //Use LINQ
-            return data.Select(item => (long)(Math.Pow(item, 2)));
+            return data.Select(item => (long)item * item);    //(long)Math.Pow(item, 2) - невенро изза приведения double to long
+
 
             List<long> result = new List<long>();
             foreach (var item in data)
             {
-                result.Add((long)Math.Pow(item, 2));
+                result.Add((long)item * item);
             }
 
             return result;
